@@ -248,11 +248,12 @@ export default class CreateStory extends Component {
                 />
               </View>
               <View style={styles.submitButton}>
-                <Button
-                  onPress={() => this.addStory()}
-                  title="Submit"
-                  color="#841584"
-                />
+                
+                
+                
+                
+                
+                
               </View>
             </ScrollView>
           </View>
