@@ -43,30 +43,10 @@ export default class Feed extends Component {
     this.fetchUser();
   }
 
-  fetchStories = () => {
-    firebase
-      .database()
-      .ref("/posts/")
-      .on(
-        "value",
-        snapshot => {
-          let stories = [];
-          if (snapshot.val()) {
-            Object.keys(snapshot.val()).forEach(function (key) {
-              stories.push({
-                key: key,
-                value: snapshot.val()[key]
-              });
-            });
-          }
-          this.setState({ stories: stories });
-          this.props.setUpdateToFalse();
-        },
-        function (errorObject) {
-          console.log("The read failed: " + errorObject.code);
-        }
-      );
-  };
+  
+  
+  
+  
 
   fetchUser = () => {
     let theme;
