@@ -44,45 +44,9 @@ export default class CreateStory extends Component {
     this.fetchUser();
   }
 
-  async addStory() {
-    if (
-      this.state.title &&
-      this.state.description &&
-      this.state.story &&
-      this.state.moral
-    ) {
-      let storyData = {
-        preview_image: this.state.previewImage,
-        title: this.state.title,
-        description: this.state.description,
-        story: this.state.story,
-        moral: this.state.moral,
-        author: firebase.auth().currentUser.displayName,
-        created_on: new Date(),
-        author_uid: firebase.auth().currentUser.uid,
-        likes: 0
-      };
-      await firebase
-        .database()
-        .ref(
-          "/posts/" +
-            Math.random()
-              .toString(36)
-              .slice(2)
-        )
-        .set(storyData)
-        .then(function(snapshot) {});
-      this.props.setUpdateToTrue();
-      this.props.navigation.navigate("Feed");
-    } else {
-      Alert.alert(
-        "Error",
-        "All fields are required!",
-        [{ text: "OK", onPress: () => console.log("OK Pressed") }],
-        { cancelable: false }
-      );
-    }
-  }
+  
+  
+  
 
   fetchUser = () => {
     let theme;
